@@ -25,5 +25,6 @@ route.register(r'books', viewsets.BookViewSet, basename='Books')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', include(route.urls))
+    path('', include(route.urls)),
+    path('', include('books.urls'))
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
